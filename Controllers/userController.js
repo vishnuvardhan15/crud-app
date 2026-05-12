@@ -6,7 +6,7 @@ const getUsers = async(req, res) => {
   try {
     res.json(await User.find());
   } catch (error) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal Server Err' });
   }
 };
 const getUserById = async(req, res) => {

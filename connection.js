@@ -3,8 +3,7 @@ const dotenv = require("dotenv");
 const {Schema, model} = mongoose;
 dotenv.config({path: "./config.env"})
 
-const password = encodeURIComponent(process.env.PASSWORD);
-const ATLAS_URL = process.env.ATLAS_DB.replace("<PASSWORD>",password);
+const ATLAS_URL = process.env.ATLAS_DB;
 
 mongoose.connect(ATLAS_URL, {
     useNewUrlParser: true,
@@ -13,11 +12,7 @@ mongoose.connect(ATLAS_URL, {
 .then(()=>console.log("DB connection successfull"));
 
 const userSchema = new Schema({
-    first_name: {
-        type: String,
-        required: true
-    },
-    last_name: {
+    name: {
         type: String,
         required: true
     },

@@ -15,7 +15,7 @@ app.use((req, res, next) => { // own middleware
   next();
 }); 
 app.use(morgan("tiny")); //logger
-app.use("/api/v1/users", userRouter); //CRUD operations
+app.use("/", userRouter); //CRUD operations
 
 //server listening
 app.listen(PORT, () => console.log(`server running at port:${PORT}`));

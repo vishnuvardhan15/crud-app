@@ -21,6 +21,7 @@ const getUserById = async(req, res) => {
 //Write data
 const postUser = async (req, res) => {
   try{
+    console.log("body : ",req.body);
     const newUser = await User.create(req.body);
     return res.status(201).send({ status: "success", newUser });
   }
